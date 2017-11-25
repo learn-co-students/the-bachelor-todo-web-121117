@@ -84,6 +84,22 @@ def get_occupation(data, hometown)
 end
 
 def get_average_age_for_season(data, season)
-  # code here
-  
+  # Build a method, `get_average_age_for_season`, that takes in two arguments––the data hash and a string of a season.
+  # Iterate through the hash and return the average age of all of the contestants for that season.
+  # * How will you iterate down into the level of the hash that contains each contestant's age?
+  # * How will you collect the ages of each contestant and average them? Remember that the values of the "age" keys are not numbers,
+  #  they are strings. How do we convert strings to numbers in Ruby?
+  # * Remember that dividing *integers* in Ruby always rounds down. In this case though, we want the normal math sort of rounding
+  # (where .5 and higher rounds *up*), instead. Consider the difference between `to_f` and `to_i`.
+  return_value = []
+  average_sum = 0
+
+  data[season].each do |information|
+  return_value << information["age"].to_i
+  end
+  return_value.each do |item|
+    average_sum += item
+  end
+  final_average = average_sum/(return_value.length)
+return final_average
 end
