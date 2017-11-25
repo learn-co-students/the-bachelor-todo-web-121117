@@ -46,7 +46,6 @@ def get_first_name_of_season_winner(data, season)
   return return_value
 end
 def get_contestant_name(data, occupation)
-  # 2. Build a method, `get_contestant_name`, that takes in the data hash and an occupation string and returns the name of the woman who has that occupation.
   return_value = ""
   data.each do |season,information|
     information.each do |stats|
@@ -58,7 +57,15 @@ end
 end
 
 def count_contestants_by_hometown(data, hometown)
-  # code here
+  hometown_array = []
+    data.each do |season, information|
+      information.each do |stats|
+        if stats["hometown"] == hometown
+          hometown_array << stats["name"]
+        end
+      end
+    end
+    return hometown_array.length
 end
 
 def get_occupation(data, hometown)
