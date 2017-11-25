@@ -21,6 +21,7 @@ def get_contestant_name(data, occupation)
 full_name=''
 
   data.each do |season_data,details_array|
+    puts season_data
     details_array.each do |details_hash|
       details_hash.each do |key,value|
         if value == occupation
