@@ -100,6 +100,6 @@ def get_average_age_for_season(data, season)
   return_value.each do |item|
     average_sum += item
   end
-  final_average = average_sum/(return_value.length)
-return final_average
+  final_average = average_sum.to_f/return_value.length.to_f
+return final_average.round
 end
