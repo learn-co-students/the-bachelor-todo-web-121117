@@ -39,9 +39,9 @@ def get_occupation(data, hometown)
 
 def get_average_age_for_season(data, season)
    total_age = 0 #variable total_age = to a number
-   data[season].each do |contestant|#iterate through the array
-     total_age += contestant["age"].to_i
+   data[season].each do |contestant|#iterate through array / hash data
+     total_age += contestant["age"].to_i #total age is going to incrament by contestants age rounded to an integer
    end
      average = total_age.to_f/data[season].length
-    return average.round
+    return average.round #round to the nearest whole number
 end
